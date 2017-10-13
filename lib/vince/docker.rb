@@ -1,9 +1,9 @@
 module Vince
   class Docker < Command
-    autoload :Help, 'ufo/docker/help'
-    autoload :Builder, 'ufo/docker/builder'
-    autoload :Dockerfile, 'ufo/docker/dockerfile'
-    autoload :Cleaner, 'ufo/docker/cleaner'
+    autoload :Help, 'vince/docker/help'
+    autoload :Builder, 'vince/docker/builder'
+    autoload :Dockerfile, 'vince/docker/dockerfile'
+    autoload :Cleaner, 'vince/docker/cleaner'
 
     desc "build", "builds docker image"
     long_desc Help.build

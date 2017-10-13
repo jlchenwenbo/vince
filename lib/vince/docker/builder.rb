@@ -7,7 +7,7 @@ module Vince
       @options = options
       @project_root = options[:project_root] || '.'
       @dockerfile = options[:dockerfile] || 'Dockerfile'
-      @image_namespace = options[:@image_namespace] || 'ufo'
+      @image_namespace = options[:@image_namespace] || 'vince'
     end
 
     def self.build(options)
@@ -36,11 +36,11 @@ module Vince
       FileUtils.mkdir_p(dirname) unless File.exist?(dirname)
       full_image_name = generate_name
       IO.write(doker_name_path, full_image_name)
-      IO.write("#{@project_root}/ufo/version", full_image_name)
+      IO.write("#{@project_root}/vince/version", full_image_name)
     end
 
     def docker_name_path
-      "#{@project_root}/ufo/docker_image_name_#{@image_namespace}.txt"
+      "#{@project_root}/vince/docker_image_name_#{@image_namespace}.txt"
     end
 
     def generate_name
