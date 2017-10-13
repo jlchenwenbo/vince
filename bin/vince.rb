@@ -7,10 +7,10 @@ Signal.trap("INT") {
 }
 
 # find abs path for lib dir
-lib = FILE.expand_path('../../lib', __FILE__)
+lib = File.expand_path('../../lib', __FILE__)
 $LOAD_PATH.unshift(lib)
 
 require 'vince'
 require 'vince/cli'
 
-Ufo::CLI.start(ARGV)
+Vince::CLI.start(ARGV)
